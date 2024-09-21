@@ -12,11 +12,14 @@ kind: Application
 metadata:
   name: wordpress
 spec:
-  app-name: wordpress
   image: wordpress:latest
+  # Ports: internal is the internal port that the container exposes
+  # external is the `NodePort` you want to expose to the node
   ports:
   - internal: 80
     external: 30080
+    SSL: true
+    domain: www.example.com
 
   volumes:
   - volume-name: wordpress-persistent-storage
