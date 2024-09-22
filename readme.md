@@ -1,6 +1,6 @@
 # CRANE KUBERNETES OPERATOR
 
-**Crane Operator** is a Kubernetes operator that simplifies application deployment by enabling you to write one simple `yaml` configuration file and the operator handles everything else from setting up Pod/Deployments, Services, Volumes, Ingress, SSL(with Cert-Manager) and DNS(using External DNS) and more.
+**Crane Operator** is a Kubernetes operator that simplifies application deployment by enabling you to write one simple `yaml` configuration file and the operator handles everything else from setting up Pod/Deployments, Services, Volumes, Ingress, SSL and DNS and more.
 
 It accomplishes this by defining a specification for an `Application` object that you follow while it handles the rest.
 
