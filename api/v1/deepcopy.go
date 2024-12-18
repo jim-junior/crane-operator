@@ -8,7 +8,6 @@ func (in *Application) DeepCopyInto(out *Application) {
 	out.TypeMeta = in.TypeMeta
 	out.ObjectMeta = in.ObjectMeta
 	out.Spec = ApplicationSpec{
-		AppName: in.Spec.AppName,
 		Volumes: in.Spec.Volumes,
 		Ports:   in.Spec.Ports,
 		EnvFrom: in.Spec.EnvFrom,
