@@ -92,7 +92,6 @@ func GetDeploymentCFGFromApp(
 	ports := []corev1.ContainerPort{}
 	for _, port := range app.Spec.Ports {
 		ports = append(ports, corev1.ContainerPort{
-			Name:          port.Domain,
 			ContainerPort: int32(port.Internal),
 		})
 	}
@@ -157,7 +156,6 @@ func GetServiceCFGFromApp(
 
 	for _, port := range app.Spec.Ports {
 		service.Spec.Ports = append(service.Spec.Ports, corev1.ServicePort{
-			Name:     port.Domain,
 			Port:     int32(port.External),
 			Protocol: corev1.ProtocolTCP,
 			TargetPort: intstr.IntOrString{
@@ -180,11 +178,6 @@ func GetPersistentVolumeClaimFromApp(
 		Spec: corev1.PersistentVolumeClaimSpec{
 			AccessModes: []corev1.PersistentVolumeAccessMode{
 				corev1.ReadWriteOnce,
-			},
-			Resources: corev1.VolumeResourceRequirements{
-				Requests: corev1.ResourceList{
-					corev1.ResourceStorage: resourceQuantity(app.Spec.Resources.Storage),
-				},
 			},
 		},
 	}

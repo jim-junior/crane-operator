@@ -28,12 +28,5 @@ RUN apk -U upgrade \
   && apk add --no-cache dumb-init ca-certificates \
   && chmod +x /app/app
 
-RUN ls
-
-
-# Expose the port the app runs on
-EXPOSE 3000
 
 ENTRYPOINT [ "/app/app" ]
-
-CMD ["controller"]
