@@ -198,7 +198,7 @@ So lets begin by initialising out Go project:
 ```bash
 mkdir app-operator && cd app-operator
 
-go mod init https://github.com/jim-junior/crane-operator
+go mod init github.com/jim-junior/crane-operator
 ```
 
 We shall then install the go dependencies that we shall use in our project. You can install then by running this in the command line.
